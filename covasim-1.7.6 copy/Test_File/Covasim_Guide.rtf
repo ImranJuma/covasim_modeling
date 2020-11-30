@@ -1,0 +1,104 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red220\green161\blue13;}
+{\*\expandedcolortbl;;\cssrgb\c89412\c68627\c3922;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww14200\viewh15540\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 COVASIM README.txt File \
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Section_1\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+Requirements: \
+- Python3 (https://www.python.org/downloads/windows/)\
+\
+Start-up Instructions: \
+- Clone original Github repo. This can be down by downloading the complete Zip File \
+- https://github.com/InstituteforDiseaseModeling/covasim\
+\
+Installation Instructions: \
+(Use the following commands to install the COVASIM package on your machine)\
+- python3 \
+- python3 setup.py develop\
+- python3 setup.py develop newebapp\
+- python3 setup.py develop full \
+- import Covasim as cv \
+\
+Installation Confirmation: \
+(We can use the following commands to verify our installation of COVASIM is working) \
+- (Navigate to the examples folder)\
+- python3 simple.py\
+- pythin3 run_sim.py\
+- python3 run_scenarios.py\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Section_2\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+**Assumptions, Data Sources, & Processing Instructions**\
+\
+**Assumptions**\
+\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls1\ilvl0
+\f1 \cf0 - Covasim is pre-populated with demographic data on population age structures and household sizes by country, and uses these data to generate population contact networks for the setting.\uc0\u8232 \
+- Covasim is pre-populated with demographic data on population age structures and household sizes by country, and uses these data to generate population contact networks for the setting.\uc0\u8232 \
+- In addition, infected and infectious individuals are categorised as either asymptomatic or in different symptomatic groups: pre-symptomatic (before viral shedding has begun), or with mild, severe, or critical symptoms ({\field{\*\fldinst{HYPERLINK "https://www.thelancet.com/journals/lanchi/article/PIIS2352-4642(20)30250-9/fulltext#fig1"}}{\fldrslt \cf2 figure 1}}).\uc0\u8232 \
+- Covasim accounts for testing strategies via parameters that determine the probabilities with which people with different symptoms receive a test each day ({\field{\*\fldinst{HYPERLINK "https://www.thelancet.com/journals/lanchi/article/PIIS2352-4642(20)30250-9/fulltext#sec1"}}{\fldrslt \cf2 appendix p 4}}).\uc0\u8232 \
+- The calibrated model estimated that between Jan 21 and June 17, 2021, the daily probability of testing people with symptoms was 1\'b798% corresponding to about 18% of people with symptomatic infection being tested at some point during their illness (assuming an average symptomatic period of about 10 days). In addition, the model assumed that the daily probability of testing people without symptoms was 0\'b7075% corresponding to about 0\'b775% of people with asymptomatic infection being tested at some point during their illness (assuming an average symptomatic period of about 10 days). In addition, \uc0\u8232 \
+- In the first strategy, 68% of contacts are traced with no scale-up in testing (ie, 18% of people with symptomatic infection and about 0\'b775% of those with asymptomatic infection are tested). In the second strategy, 68% of contacts are traced and testing is scaled up sufficiently to avoid a second COVID-19 wave. In the third strategy, 40% of contacts are traced and symptomatic testing is scaled up sufficiently to avoid a second COVID-19 wave.\uc0\u8232 \
+- We determined that 1500 people were infected in the UK on Jan 21, 2020 ({\field{\*\fldinst{HYPERLINK "https://www.thelancet.com/journals/lanchi/article/PIIS2352-4642(20)30250-9/fulltext#sec1"}}{\fldrslt \cf2 appendix p 1}}), and that the per-contact transmission probability was 0\'b759% ({\field{\*\fldinst{HYPERLINK "https://www.thelancet.com/journals/lanchi/article/PIIS2352-4642(20)30250-9/fulltext#sec1"}}{\fldrslt \cf2 appendix p 5}}).\uc0\u8232 \
+- We assume that transmission within schools is proportional to school years going back, which allows parents to go back to work. We thus assume that return to workplaces is proportional to reopening of schools. \uc0\u8232 \
+- We assume that 30% of the workforce will remain working from home for the foreseeable future\uc0\u8232 \
+- We also assumed that reopening of schools would correspond to increases in workplace and community transmission probabilities, to account for increased social mixing with reopening of schools and relaxation of the physical distancing restrictions that have applied to work, leisure, and community activities.\'a0\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+- In addition, we assumed that if schools reopen in a part-time rota, this system would be in place for one school term (autumn term, 2020) only and then schools will go back full time from Jan 1, 2021 ({\field{\*\fldinst{HYPERLINK "https://www.thelancet.com/journals/lanchi/article/PIIS2352-4642(20)30250-9/fulltext#tbl1"}}{\fldrslt \cf2 table}}).\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 **Data Sources**\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 \
+- The original COVASIM model uses a .XLXS file that takes in the number of infected vs recovered individuals from the begging of the 2019 COVID Pandemic to the present date. This file is noted in the folder as UK_Covid_cases_august02.xlsx. These numbers have been updated to the Canadian Data up to the date of 8/1/2020. \
+\
+- This data where pulled form https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data. \
+\
+- Here we used the data files csse_covid_19_daily_report, from here the case data of all Canada is recorded by making an additional column under Canada and calculating the daily totals for each province cumulatively \
+\
+- Once you have this done, you can vertically shift the data as seen in the source code have the files read when processing the model. \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 **Processing Instructions**\
+\
+- Locate the Canada_Reopening folder \
+\
+- Files can be run using the python3 FILE_NAME.py command \
+\
+- This will allow the program to process the simulation that normally takes anywhere from 4-10minutes. \
+\
+**Accuracy Of This Testing**\
+\
+- When running this program, I\'92ve found that the test that produces the best results are done when running with high_comp_notschools and with the use of test-trace. \
+\
+- This is because we can track the amount of new COVID-19 cases in the given population \
+\
+**Findings**\
+\
+[3][1] = Concrete Results \
+[2][1] = No Concrete Results \
+[1][1] = No Concrete Results \
+[0][1] = No Concrete Results \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+}

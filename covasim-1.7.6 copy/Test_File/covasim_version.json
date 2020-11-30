@@ -1,0 +1,14 @@
+{
+  "covasim": {
+    "version": "1.5.0",
+    "branch": "Git branch N/A",
+    "hash": "Git has",
+    "date": "Git date N/A"
+  },
+  "called_by": {
+    "branch": "Git branch N/A",
+    "hash": "Git has",
+    "date": "Git date N/A",
+    "filename": "/Users/imranjuma/Desktop/covasim-1.7.6/Test_File/N/A"
+  }
+}
