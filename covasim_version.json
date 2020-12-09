@@ -1,14 +1,14 @@
 {
   "covasim": {
-    "version": "1.7.6",
-    "branch": "Git branch N/A",
-    "hash": "Git has",
-    "date": "Git date N/A"
+    "version": "2.0.0",
+    "branch": "master",
+    "hash": "1525cf9",
+    "date": "2020-11-30 23:10:42 UTC"
   },
   "called_by": {
-    "branch": "Git branch N/A",
-    "hash": "Git has",
-    "date": "Git date N/A",
-    "filename": "/Users/imranjuma/Desktop/covasim-1.7.6/Canadian_SIM_Nov_23.py"
+    "branch": "master",
+    "hash": "1525cf9",
+    "date": "2020-11-30 23:10:42 UTC",
+    "filename": "/Users/imranjuma/Desktop/covasim_modeling/Canadian_SIM_Nov_30.py"
   }
 }
