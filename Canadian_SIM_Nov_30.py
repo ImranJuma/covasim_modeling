@@ -10,7 +10,7 @@ import os
 pl.switch_backend('agg')
 
 # Check version
-cv.check_version('1.7.6') #Use This To Keep COVASIM updated to always run the newest version 
+cv.check_version('2.0.0') #Use This To Keep COVASIM updated to always run the newest version 
 cv.git_info('covasim_version.json')
 
 do_plot = 1
