@@ -19,7 +19,7 @@ do_show = 1
 verbose = 1
 seed    = 1
 
-scenario = ['Scenario_1_Normal', 'Senario_2_0_COMP', 'Senario_3_30_COMP', 'Senario_4_60_COMP', 'Senario_5_90_COMP'][1] #These are the different simulation running 
+scenario = ['Scenario_1_Normal', 'Senario_2_0_COMP'] [1] #These are the different simulation running 
 tti_scen = ['current', 'optimal_masks15', 'optimal_masks30', 'optimal_masks50', 'optimal_masks15_notschools', 'optimal_masks30_notschools', 'optimal_masks50_notschools'][2] #Sticking With Current At The Moment 
 
 version   = 'v1'
@@ -60,16 +60,19 @@ sim = cv.Sim(pars=pars, datafile=data_path, location='Canada') #Setting the coun
 sim['prognoses']['sus_ORs'][2] = 1.0 # ages 0-10 #Let's suggest for this simulation that kids are more susptible 
 sim['prognoses']['sus_ORs'][1] = 1.0 # ages 10-20
 
-
-#%% Interventions
-
-
 #These dates have been imprted to account for scenarios that will occure effecting posotive ^ or down cases of COVID-19
 tc_day = sim.day('2020-03-05') #intervention of some testing (tc) starts on 16th March and we run until 1st April when it increases
 te_day = sim.day('2020-04-05') #intervention of some testing (te) starts on 1st April and we run until 1st May when it increases
 tt_day = sim.day('2020-05-05') #intervention of increased testing (tt) starts on 1st May
 tti_day= sim.day('2020-07-01') #intervention of tracing and enhanced testing (tti) starts on 1st June / https://toronto.ctvnews.ca/where-is-the-covid-19-contact-tracing-app-that-was-supposed-to-launch-in-ontario-1.5031527#:~:text=The%20federally%2Dbacked%20COVID%20Alert,before%20launching%20the%20program%20nationwide.
+tti_day= sim.day('2020-09-11') #with the reopening of schools many travels will reenter ontatio and cases begin to rise again https://www.cbc.ca/news/canada/toronto/covid-19-ontario-cases-data-1.5726687
+tti_day= sim.day('2020-10-23') #Ontario will begin a holiday lockdown from end of october -> end of dec https://toronto.ctvnews.ca/ontario-extends-covid-19-orders-for-another-30-days-amid-second-wave-1.5152527
+tti_day= sim.day('2020-11-23') #Ontario begins to lock down some portions of high risk cities https://news.ontario.ca/en/release/59305/ontario-taking-further-action-to-stop-the-spread-of-covid-19
+tti_day= sim.day('2020-12-26') #Ontario enters into the holiday lockdown 
+ti_day = sim.day('2021-01-25') #Ontario Will Reopen Schools 
+
 ti_day = sim.day('2021-12-20') #schools interventions end date in December 2021
+
 tti_day_july= sim.day('2020-08-01') #intervention of tracing and enhanced testing (tti) at different levels starts on 1st August  #Close to end of the month
 tti_day_august= sim.day('2020-09-01') #intervention of tracing and enhanced testing (tti) at different levels starts on 1st August #
 
@@ -94,32 +97,11 @@ elif scenario == 'Senario_2_0_COMP':
     h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     s_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]  
-
-#Phased opening with society opening and masks effective coverage=50% from 24th July
-# masks in schools from 1st September
-elif scenario == 'Senario_3_30_COMP': 
-    h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    s_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]  
-
-elif scenario == 'Senario_4_60_COMP':
-    h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    s_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]    
-
-elif scenario == 'Senario_5_90_COMP':
-    h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    s_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]  
+    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]   
 
 else:
     print(f'Scenario {scenario} not recognised')
-
-
+    
 #---------------------------------------------------------------------------------------------------------#
 #Everything Below This Line Should Be Done In Callibration After Above Is First Completed
 
@@ -136,12 +118,18 @@ if tti_scen == 'current':
 
     # Tracing and enhanced testing strategy of symptimatics from 1st June
     #testing in June remains the same as before June under this scenario
-    s_prob_march = 0.012
-    s_prob_april = 0.012
-    s_prob_may   = 0.0165
-    s_prob_june = 0.0171
-    s_prob_july = 0.0171
-    s_prob_august = 0.0171
+    s_prob_march = 0.012 #Need To Be Adapted 
+    s_prob_april = 0.012 #Need To Be Adapted 
+    s_prob_may   = 0.0165 #Need To Be Adapted 
+    s_prob_june = 0.0171 #Need To Be Adapted 
+    s_prob_july = 0.0171 #Need To Be Adapted 
+    s_prob_august = 0.0171 #Need To Be Adapted 
+    s_prob_september = 0.0171 #Need To Be Adapted 
+    s_prob_october = 0.0171 #Need To Be Adapted 
+    s_prob_november = 0.0171 #Need To Be Adapted 
+    s_prob_december = 0.0171 #Need To Be Adapted 
+    s_prob_january = 0.0171 #Need To Be Adapted 
+
     t_delay       = 1.0
 
     iso_vals = [{k:0.1 for k in 'hswc'}]
