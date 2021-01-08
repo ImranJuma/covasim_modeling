@@ -19,8 +19,8 @@ do_show = 1
 verbose = 1
 seed    = 1
 
-scenario = ['Scenario_1_Normal', 'Senario_2_0_COMP'] [1] #These are the different simulation running 
-tti_scen = ['current', 'optimal_masks15', 'optimal_masks30', 'optimal_masks50', 'optimal_masks15_notschools', 'optimal_masks30_notschools', 'optimal_masks50_notschools'][2] #Sticking With Current At The Moment 
+scenario = ['SIM_1_Normal', 'SIM_2_Test'] [0] #These are the different simulation running 
+tti_scen = ['current'][0] #Sticking With Current At The Moment 
 
 version   = 'v1'
 date      = '2020june17'
@@ -75,6 +75,9 @@ ti_day = sim.day('2021-12-20') #schools interventions end date in December 2021
 
 tti_day_july= sim.day('2020-08-01') #intervention of tracing and enhanced testing (tti) at different levels starts on 1st August  #Close to end of the month
 tti_day_august= sim.day('2020-09-01') #intervention of tracing and enhanced testing (tti) at different levels starts on 1st August #
+tti_day_september= sim.day('2020-10-01') #intervention of tracing and enhanced testing (tti) in september resergence  
+tti_day_december= sim.day('2021-01-01') #intervention of tracing and enhanced testing (tti) in september resergence  
+
 
 
 #Various Intervention Dates that will have a increase or decrease in overall transmission. 
@@ -85,19 +88,18 @@ beta_days = ['2020-02-14',  '2020-03-16', '2020-04-16', '2020-07-02', '2020-09-0
 # Fully Schools from Sep opening with society opening
 # Phased opening with society opening and masks effective coverage=15% from 24th July
 # masks in schools from 1st September
-if scenario == 'Scenario_1_Normal':
-    h_beta_changes = [0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.80, 0.50, 0.50, 0.50, 0.50]
-    s_beta_changes = [0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.50]
-    w_beta_changes = [0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.50]
-    c_beta_changes = [0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.50]
 
-#Phased opening with society opening and masks effective coverage=30% from 24th July
-# masks in schools from 1st September
-elif scenario == 'Senario_2_0_COMP':
+if scenario == 'SIM_1_Normal':
     h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     s_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]   
+    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00] 
+
+elif scenario == 'SIM_2_Test':
+    h_beta_changes = [0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50] #We that the changes of infection at home are lower 
+    s_beta_changes = [0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70] #We say that the changes of infection at school are higher because of the no-masks 
+    w_beta_changes = [0.50, 0.70, 0.50, 0.70, 0.50, 0.70, 0.50, 0.70, 0.50, 0.70, 0.50, 0.70, 0.50, 0.70] #Since we are facing a variation of lockdowns transmission in the workplace has gone down but flutuates when we see periods of reserugence  
+    c_beta_changes = [0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.80] #community transmission being the highest when people are out, this is why the varible changes but as well we have contact tracing to now see how many new infections this is beggining to create   
 
 else:
     print(f'Scenario {scenario} not recognised')
@@ -118,27 +120,41 @@ if tti_scen == 'current':
 
     # Tracing and enhanced testing strategy of symptimatics from 1st June
     #testing in June remains the same as before June under this scenario
-    s_prob_march = 0.012 #Need To Be Adapted 
-    s_prob_april = 0.012 #Need To Be Adapted 
-    s_prob_may   = 0.0165 #Need To Be Adapted 
-    s_prob_june = 0.0171 #Need To Be Adapted 
-    s_prob_july = 0.0171 #Need To Be Adapted 
-    s_prob_august = 0.0171 #Need To Be Adapted 
-    s_prob_september = 0.0171 #Need To Be Adapted 
-    s_prob_october = 0.0171 #Need To Be Adapted 
-    s_prob_november = 0.0171 #Need To Be Adapted 
-    s_prob_december = 0.0171 #Need To Be Adapted 
-    s_prob_january = 0.0171 #Need To Be Adapted 
+    s_prob_march = 0.012 
+    s_prob_april = 0.012 
+    s_prob_may   = 0.0165
+    s_prob_june = 0.0171 
+    s_prob_july = 0.0171 
+    s_prob_august = 0.0171 
+    s_prob_september = 0.0181
+    s_prob_october = 0.0181 
+    s_prob_november = 0.0181 
+    s_prob_december = 0.0191 
 
     t_delay       = 1.0
 
     iso_vals = [{k:0.1 for k in 'hswc'}]
 
-    #tracing level at 42.35% in June; 47.22% in July
-    t_eff_june   = 0.42
-    t_eff_july   = 0.47
+    #For this model we assume that contact tracing begins around the 50% mark with 
+    #increasing in these levels with the months leading up to when we started to see secondardy 
+    #resurgence in cases in ontario. As well we know that our percentile is around 60% coming towards 
+    #Chistmas
+    t_eff_june   = 0.50
+    t_eff_july   = 0.50
+    t_eff_aug   = 0.60
+    t_eff_sept   = 0.65
+    t_eff_oct   = 0.70
+    t_eff_nov   = 0.60
+    t_eff_dec   = 0.60
+
     t_probs_june = {k:t_eff_june for k in 'hwsc'}
     t_probs_july = {k:t_eff_july for k in 'hwsc'}
+    t_probs_aug = {k:t_eff_july for k in 'hwsc'}
+    t_probs_sept = {k:t_eff_july for k in 'hwsc'}
+    t_probs_oct = {k:t_eff_july for k in 'hwsc'}
+    t_probs_nov = {k:t_eff_july for k in 'hwsc'}
+    t_probs_dec = {k:t_eff_july for k in 'hwsc'}
+    
     trace_d_1      = {'h':0, 's':1, 'w':1, 'c':2}
 
     #testing and isolation intervention
@@ -150,8 +166,13 @@ if tti_scen == 'current':
         cv.test_prob(symp_prob=s_prob_july, asymp_prob=0.00075, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tti_day_july, end_day=tti_day_august-1, test_delay=t_delay),
         cv.test_prob(symp_prob=s_prob_august, asymp_prob=0.00075, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tti_day_august, test_delay=t_delay),
         cv.dynamic_pars({'iso_factor': {'days': te_day, 'vals': iso_vals}}),
-        cv.contact_tracing(trace_probs=t_probs_june, trace_time=trace_d_1, start_day=tti_day, end_day=tti_day_july-1),
+        #cv.contact_tracing(trace_probs=t_probs_june, trace_time=trace_d_1, start_day=tti_day, end_day=tti_day_july-1),
         cv.contact_tracing(trace_probs=t_probs_july, trace_time=trace_d_1, start_day=tti_day_july),
+        cv.contact_tracing(trace_probs=t_probs_aug, trace_time=trace_d_1, start_day=tti_day_july),
+        cv.contact_tracing(trace_probs=t_probs_sept, trace_time=trace_d_1, start_day=tti_day_july),
+        cv.contact_tracing(trace_probs=t_probs_oct, trace_time=trace_d_1, start_day=tti_day_july),
+        cv.contact_tracing(trace_probs=t_probs_nov, trace_time=trace_d_1, start_day=tti_day_july),
+        cv.contact_tracing(trace_probs=t_probs_dec, trace_time=trace_d_1, start_day=tti_day_july),  
       ]
 
 else:
