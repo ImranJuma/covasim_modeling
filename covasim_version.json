@@ -2,13 +2,13 @@
   "covasim": {
     "version": "2.0.0",
     "branch": "master",
-    "hash": "51db5b6",
-    "date": "2021-01-08 04:20:38 UTC"
+    "hash": "5232ca9",
+    "date": "2021-01-08 20:19:27 UTC"
   },
   "called_by": {
     "branch": "master",
-    "hash": "51db5b6",
-    "date": "2021-01-08 04:20:38 UTC",
+    "hash": "5232ca9",
+    "date": "2021-01-08 20:19:27 UTC",
     "filename": "/Users/imranjuma/Desktop/covasim_modeling/Canadian_SIM_Nov_30.py"
   }
 }

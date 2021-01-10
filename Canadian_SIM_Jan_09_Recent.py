@@ -19,8 +19,8 @@ do_show = 1
 verbose = 1
 seed    = 1
 
-scenario = ['Scenario_1_Normal', 'Senario_2_0_COMP', 'Senario_3_30_COMP', 'Senario_4_60_COMP', 'Senario_5_90_COMP'][1] #These are the different simulation running 
-tti_scen = ['current', 'optimal_masks15', 'optimal_masks30', 'optimal_masks50', 'optimal_masks15_notschools', 'optimal_masks30_notschools', 'optimal_masks50_notschools'][2] #Sticking With Current At The Moment 
+scenario = ['Scenario_1_Normal', 'Senario_2_0_COMP'][1] #These are the different simulation running 
+tti_scen = ['current'][0] #Sticking With Current At The Moment 
 
 version   = 'v1'
 date      = '2020june17'
@@ -38,7 +38,7 @@ pop_size     = 100e3 # Actual simulated population
 pop_scale    = int(total_pop/pop_size)
 pop_type     = 'hybrid' #Recall what this was, and we can adapt accordingly 
 pop_infected = 1500 #Starting With An Estimated Infected Population Of 1500
-beta         = 0.00445 #Need To Paramatize #Current Estimation 380K // Live == 377K
+beta         = 0.00467
 asymp_factor = 2 #Need To Paramatize 
 contacts     = {'h':3.0, 's':20, 'w':20, 'c':20} #Need To Paramatize 
 
@@ -62,8 +62,6 @@ sim['prognoses']['sus_ORs'][1] = 1.0 # ages 10-20
 
 
 #%% Interventions
-
-
 #These dates have been imprted to account for scenarios that will occure effecting posotive ^ or down cases of COVID-19
 tc_day = sim.day('2020-03-05') #intervention of some testing (tc) starts on 16th March and we run until 1st April when it increases
 te_day = sim.day('2020-04-05') #intervention of some testing (te) starts on 1st April and we run until 1st May when it increases
@@ -77,7 +75,9 @@ tti_day_august= sim.day('2020-09-01') #intervention of tracing and enhanced test
 #Various Intervention Dates that will have a increase or decrease in overall transmission. 
 #FORMAT = [YYYY-MM-DD]
 #What is the scale of these kinds of values 
-beta_days = ['2020-02-14',  '2020-03-16', '2020-04-16', '2020-07-02', '2020-09-02', '2020-09-02', '2020-11-01', '2020-12-23', '2021-01-11',  '2021-03-21', '2021-03-21', '2021-06-04', '2021-09-01', ti_day]
+beta_days = ['2020-02-14',  '2020-03-20', '2020-04-17', '2020-07-17', '2020-08-26', '2020-09-04', '2020-10-16', '2020-11-06', '2020-12-26',  '2021-01-11', 
+'2021-03-21', '2021-07-04', '2021-09-01', ti_day]
+
 
 # Fully Schools from Sep opening with society opening
 # Phased opening with society opening and masks effective coverage=15% from 24th July
@@ -94,27 +94,7 @@ elif scenario == 'Senario_2_0_COMP':
     h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     s_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]  
-
-#Phased opening with society opening and masks effective coverage=50% from 24th July
-# masks in schools from 1st September
-elif scenario == 'Senario_3_30_COMP': 
-    h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    s_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]  
-
-elif scenario == 'Senario_4_60_COMP':
-    h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    s_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]    
-
-elif scenario == 'Senario_5_90_COMP':
-    h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    s_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]  
+    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]   
 
 else:
     print(f'Scenario {scenario} not recognised')
@@ -146,11 +126,22 @@ if tti_scen == 'current':
 
     iso_vals = [{k:0.1 for k in 'hswc'}]
 
-    #tracing level at 42.35% in June; 47.22% in July
-    t_eff_june   = 0.42
-    t_eff_july   = 0.47
+    #tracing level at 50% in June; 60 in December
+    t_eff_june   = 0.50
+    t_eff_july   = 0.50
+    t_eff_aug   = 0.60
+    t_eff_sept   = 0.65
+    t_eff_oct   = 0.70
+    t_eff_nov   = 0.60
+    t_eff_dec   = 0.60
     t_probs_june = {k:t_eff_june for k in 'hwsc'}
     t_probs_july = {k:t_eff_july for k in 'hwsc'}
+    t_probs_aug = {k:t_eff_july for k in 'hwsc'}
+    t_probs_sept = {k:t_eff_july for k in 'hwsc'}
+    t_probs_oct = {k:t_eff_july for k in 'hwsc'}
+    t_probs_nov = {k:t_eff_july for k in 'hwsc'}
+    t_probs_dec= {k:t_eff_july for k in 'hwsc'}
+    
     trace_d_1      = {'h':0, 's':1, 'w':1, 'c':2}
 
     #testing and isolation intervention

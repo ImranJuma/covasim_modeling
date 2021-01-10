@@ -19,7 +19,7 @@ do_show = 1
 verbose = 1
 seed    = 1
 
-scenario = ['SIM_1_Normal', 'SIM_2_Test'] [1] #These are the different simulation running 
+scenario = ['SIM_1_Normal', 'SIM_2_Test'] [0] #These are the different simulation running 
 tti_scen = ['current'][0] #Sticking With Current At The Moment 
 
 version   = 'v1'
@@ -82,8 +82,7 @@ tti_day_december= sim.day('2021-01-01') #intervention of tracing and enhanced te
 
 #Various Intervention Dates that will have a increase or decrease in overall transmission. 
 #FORMAT = [YYYY-MM-DD]
-beta_days = ['2020-03-20',  '2020-04-03', '2020-04-17','2020-05-01','2020-06-26','2020-07-17', '2020-07-24', '2020-08-21', 
-            '2020-08-26', '2020-09-04', '2020-09-11', '2020-10-16',  '2020-11-06', '2020-12-26', 
+beta_days = ['2020-03-20',  '2020-04-17', '2020-07-17', '2020-08-26', '2020-09-04', '2020-10-16',  '2020-11-06', '2020-12-26', 
             '2021-01-11', '2021-03-21', '2021-07-04', '2021-09-01' ,ti_day]
 
 #'2021-01-11 - Schools are set to reopen for return in the new year - although this has since been postponed  
@@ -96,10 +95,10 @@ beta_days = ['2020-03-20',  '2020-04-03', '2020-04-17','2020-05-01','2020-06-26'
 # masks in schools from 1st September
 
 if scenario == 'SIM_1_Normal':
-    h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    s_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
-    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+    h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+    s_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+    w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
 
 elif scenario == 'SIM_2_Test':
     h_beta_changes = [1.00, 0.80, 0.80, 0.60, 0.60, 0.60, 0.60, 0.80, 0.80, 0.80, 0.80, 0.90, 0.90, 0.90, 0.90, 0.70, 0.70, 0.70, 0.70] #We that the changes of infection at home are lower 
