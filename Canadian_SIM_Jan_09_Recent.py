@@ -19,7 +19,7 @@ do_show = 1
 verbose = 1
 seed    = 1
 
-scenario = ['Scenario_1_Normal', 'Senario_2_0_COMP'][1] #These are the different simulation running 
+scenario = ['Scenario_1_Normal', 'Senario_2_0_COMP', 'Senario_3_0_COMP', 'Senario_4_0_COMP', 'Senario_5_0_COMP'][3] #These are the different simulation running 
 tti_scen = ['current'][0] #Sticking With Current At The Moment 
 
 version   = 'v1'
@@ -116,20 +116,48 @@ beta_days = ['2020-02-14',  '2020-03-20', '2020-04-17', '2020-07-17', '2020-08-2
 
 # Scenario #1 - Not Performing At The Moment 
 if scenario == 'Scenario_1_Normal':
-    h_beta_changes = [0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.50, 0.80, 0.50, 0.50, 0.50, 0.50]
-    s_beta_changes = [0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.50]
-    w_beta_changes = [0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.50]
-    c_beta_changes = [0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.70, 0.50, 0.80, 0.50]
+    h_beta_changes = [1.00, 1.00, 1.29, 1.29, 1.29, 1.00, 1.00, 1.29, 1.00, 1.29, 1.00, 1.29, 1.00, 1.29]
+    s_beta_changes = [1.00, 0.90, 0.02, 0.02, 0.02, 0.80, 0.80, 0.00, 0.90, 0.00, 0.90, 0.00, 0.90, 0.00]
+    w_beta_changes = [0.90, 0.80, 0.20, 0.20, 0.20, 0.70, 0.70, 0.50, 0.70, 0.50, 0.70, 0.50, 0.70, 0.50]
+    c_beta_changes = [0.90, 0.80, 0.20, 0.20, 0.20, 0.80, 0.80, 0.70, 0.90, 0.70, 0.90, 0.70, 0.90, 0.70]
 
 #Scenario Baseline
 elif scenario == 'Senario_2_0_COMP':
     h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     s_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+
+#Scenario Baseline
+elif scenario == 'Senario_3_0_COMP':
+    h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+    s_beta_changes = [0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70]
+    w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]  
+
+#Scenario Baseline
+elif scenario == 'Senario_4_0_COMP':
+    h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+    s_beta_changes = [0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40]
+    w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]   
+
+#Scenario Baseline
+elif scenario == 'Senario_5_0_COMP':
+    h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+    s_beta_changes = [0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10]
+    w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
+    c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]  
+
+if scenario == 'Scenario_1_Normal':
+    h_beta_changes = [1.29, 1.29, 1.29, 1.29, 1.00, 1.00, 1.00, 0.90, 1.00, 1.29, 1.00, 1.29, 1.00, 1.29]
+    s_beta_changes = [1.00, 0.90, 0.02, 0.02, 0.02, 0.80, 0.80, 0.00, 0.90, 0.00, 0.90, 0.00, 0.90, 0.00]
+    w_beta_changes = [0.90, 0.80, 0.20, 0.20, 0.20, 0.70, 0.70, 0.50, 0.70, 0.50, 0.70, 0.50, 0.70, 0.50]
+    c_beta_changes = [0.90, 0.80, 0.20, 0.20, 0.20, 0.80, 0.80, 0.70, 0.90, 0.70, 0.90, 0.70, 0.90, 0.70]
 
 else:
     print(f'Scenario {scenario} not recognised')
+
 
 
 #---------------------------------------------------------------------------------------------------------#
@@ -181,14 +209,15 @@ if tti_scen == 'current':
         cv.test_prob(symp_prob=0.009, asymp_prob=0.0, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tc_day_1, end_day=te_day_1-1, test_delay=t_delay),
         cv.test_prob(symp_prob=0.009, asymp_prob=0.0, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tc_day_2, end_day=te_day_2-1, test_delay=t_delay),
         cv.test_prob(symp_prob=0.009, asymp_prob=0.0, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tc_day_3, end_day=te_day_3-1, test_delay=t_delay),
- 
+        cv.test_prob(symp_prob=s_prob_april, asymp_prob=0.0, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=te_day_1, end_day=tt_day-1, test_delay=t_delay),
+        cv.test_prob(symp_prob=s_prob_may, asymp_prob=0.00075, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tti_day_2, end_day=tti_day_1-1, test_delay=t_delay),
+        cv.test_prob(symp_prob=s_prob_june, asymp_prob=0.00075, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tti_day_3, end_day=tti_day_2-1, test_delay=t_delay),
+        cv.test_prob(symp_prob=s_prob_july, asymp_prob=0.00075, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tti_day_4, end_day=tti_day_3-1, test_delay=t_delay),
+        cv.test_prob(symp_prob=s_prob_august, asymp_prob=0.00075, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tti_day_5, test_delay=t_delay),
 
-        cv.test_prob(symp_prob=s_prob_april, asymp_prob=0.0, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=te_day, end_day=tt_day-1, test_delay=t_delay),
-        cv.test_prob(symp_prob=s_prob_may, asymp_prob=0.00075, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tt_day, end_day=tti_day-1, test_delay=t_delay),
-        cv.test_prob(symp_prob=s_prob_june, asymp_prob=0.00075, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tti_day, end_day=tti_day_july-1, test_delay=t_delay),
-        cv.test_prob(symp_prob=s_prob_july, asymp_prob=0.00075, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tti_day_july, end_day=tti_day_august-1, test_delay=t_delay),
-        cv.test_prob(symp_prob=s_prob_august, asymp_prob=0.00075, symp_quar_prob=0.0, asymp_quar_prob=0.0, start_day=tti_day_august, test_delay=t_delay),
-        cv.dynamic_pars({'iso_factor': {'days': te_day, 'vals': iso_vals}}),
+
+
+        cv.dynamic_pars({'iso_factor': {'days': te_day_1, 'vals': iso_vals}}),
 
         #Contact Tracing Start End June
         cv.contact_tracing(trace_probs=t_probs_dec, trace_time=trace_d_1, start_day=tti_day_1, end_day=tti_day_8),
