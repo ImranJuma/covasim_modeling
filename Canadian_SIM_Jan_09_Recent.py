@@ -19,7 +19,7 @@ do_show = 1
 verbose = 1
 seed    = 1
 
-scenario = ['Scenario_1_Normal', 'Senario_2_0_COMP', 'Senario_3_0_COMP', 'Senario_4_0_COMP', 'Senario_5_0_COMP'][3] #These are the different simulation running 
+scenario = ['Scenario_1_Normal', 'Senario_2_0_COMP', 'Senario_3_0_COMP', 'Senario_4_0_COMP', 'Senario_5_0_COMP'][4] #These are the different simulation running 
 tti_scen = ['current'][0] #Sticking With Current At The Moment 
 
 version   = 'v1'
@@ -129,6 +129,7 @@ elif scenario == 'Senario_2_0_COMP':
     c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
 
 #Scenario Baseline
+#Choose Exported File_11
 elif scenario == 'Senario_3_0_COMP':
     h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     s_beta_changes = [0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70]
@@ -136,6 +137,7 @@ elif scenario == 'Senario_3_0_COMP':
     c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]  
 
 #Scenario Baseline
+#Choose Exported File_7
 elif scenario == 'Senario_4_0_COMP':
     h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     s_beta_changes = [0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40]
