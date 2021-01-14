@@ -2,13 +2,13 @@
   "covasim": {
     "version": "2.0.0",
     "branch": "January_Edit",
-    "hash": "ac5740f",
-    "date": "2021-01-14 02:57:48 UTC"
+    "hash": "cb58ec2",
+    "date": "2021-01-14 03:11:37 UTC"
   },
   "called_by": {
     "branch": "January_Edit",
-    "hash": "ac5740f",
-    "date": "2021-01-14 02:57:48 UTC",
+    "hash": "cb58ec2",
+    "date": "2021-01-14 03:11:37 UTC",
     "filename": "/Users/imranjuma/Desktop/covasim_modeling/Canadian_SIM_Jan_09_Recent.py"
   }
 }

@@ -19,7 +19,7 @@ do_show = 1
 verbose = 1
 seed    = 1
 
-scenario = ['Scenario_1_Normal', 'Senario_2_0_COMP', 'Senario_3_0_COMP', 'Senario_4_0_COMP', 'Senario_5_0_COMP'][4] #These are the different simulation running 
+scenario = ['Scenario_1_Normal', 'Senario_2_0_COMP', 'Senario_3_0_COMP', 'Senario_4_0_COMP', 'Senario_5_0_COMP'][3] #These are the different simulation running 
 tti_scen = ['current'][0] #Sticking With Current At The Moment 
 
 version   = 'v1'
@@ -128,7 +128,7 @@ elif scenario == 'Senario_2_0_COMP':
     w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
 
-#Scenario Baseline
+#30% Coverage Simulation
 #Choose Exported File_11
 elif scenario == 'Senario_3_0_COMP':
     h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
@@ -136,7 +136,7 @@ elif scenario == 'Senario_3_0_COMP':
     w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]  
 
-#Scenario Baseline
+#60% Coverage Simulation
 #Choose Exported File_7
 elif scenario == 'Senario_4_0_COMP':
     h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
@@ -144,14 +144,17 @@ elif scenario == 'Senario_4_0_COMP':
     w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]   
 
-#Scenario Baseline
+#90% Coverage Simulation
+#Choose Exported File_0
 elif scenario == 'Senario_5_0_COMP':
     h_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     s_beta_changes = [0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10]
     w_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]
     c_beta_changes = [1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00]  
 
-if scenario == 'Scenario_1_Normal':
+#Mixed Simulation 
+#Choose Exported File_0
+elif scenario == 'Scenario_1_Normal':
     h_beta_changes = [1.29, 1.29, 1.29, 1.29, 1.00, 1.00, 1.00, 0.90, 1.00, 1.29, 1.00, 1.29, 1.00, 1.29]
     s_beta_changes = [1.00, 0.90, 0.02, 0.02, 0.02, 0.80, 0.80, 0.00, 0.90, 0.00, 0.90, 0.00, 0.90, 0.00]
     w_beta_changes = [0.90, 0.80, 0.20, 0.20, 0.20, 0.70, 0.70, 0.50, 0.70, 0.50, 0.70, 0.50, 0.70, 0.50]
