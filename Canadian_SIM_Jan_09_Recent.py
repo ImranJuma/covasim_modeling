@@ -193,13 +193,13 @@ if tti_scen == 'current':
     iso_vals = [{k:0.1 for k in 'hswc'}]
 
     #tracing level at 50% in June; 60 in December
-    t_eff_june   = 0.50
-    t_eff_july   = 0.50
-    t_eff_aug   = 0.60
-    t_eff_sept   = 0.65
-    t_eff_oct   = 0.70
-    t_eff_nov   = 0.60
-    t_eff_dec   = 0.60
+    t_eff_june   = 0.70
+    t_eff_july   = 0.75
+    t_eff_aug   = 0.35
+    t_eff_sept   = 0.50
+    t_eff_oct   = 0.25
+    t_eff_nov   = 0.45
+    t_eff_dec   = 0.30
     t_probs_june = {k:t_eff_june for k in 'hwsc'}
     t_probs_july = {k:t_eff_july for k in 'hwsc'}
     t_probs_aug = {k:t_eff_july for k in 'hwsc'}
